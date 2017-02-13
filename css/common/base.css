@@ -1,0 +1,566 @@
+@charset "utf-8";
+
+/* 禁用iPhone中Safari的字号自动调整 */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+*{box-sizing: border-box;}
+
+/* 去除iPhone中默认的input样式 */
+input[type="submit"], input[type="reset"], input[type="button"], input {
+	-webkit-appearance: none;
+	resize: none;
+}
+
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* 图片自适应 */
+img {
+	width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+	-ms-interpolation-mode: bicubic;/*为了照顾ie图片缩放失真*/
+}
+
+/* 初始化 */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body,input,select,option {
+	font: 14px Microsoft YaHei, Tahoma, Arial, sans-serif;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	background: none;
+}
+em, i {
+	font-style: normal;
+}
+strong {
+	font-weight: normal;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+a {
+	text-decoration: none;
+	color: #969696;
+	outline: none;
+}
+ul, ol {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+img {
+	border: none;
+
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+color: rgba(0,0,0,.5);
+/*font-size: 0.12rem;*/
+font-family:Microsoft YaHei, Tahoma, Arial, sans-serif;
+}
+.hide{display: none!important;}
+.util-mask-layer {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1000;
+}
+
+.util-mask-layer-box {
+	width: 85%;
+	max-width: 300px;
+	display: inline-block;
+	position: absolute;
+	border-radius: .04rem;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #fff;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+}
+
+.util-mask-layer-box .title {
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	color: #fff;
+	font-size: 38px;
+	background-color: #1ED760;
+	border-radius: 40px;
+	text-align: center;
+	margin: 18px auto;
+}
+
+.util-mask-layer-box .content {
+	font-size: 14px;
+	color: #333;
+	padding: 5px;
+	/* text-align: center; */
+	height:inherit;
+	line-height: .4rem;
+    padding-left: 11px;
+}
+
+.util-mask-layer-box .submit {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	width: 100%;
+}
+
+.util-mask-layer-box .submit a {
+	-webkit-box-flex: 3;
+	box-flex: 3;
+	/* background-color: #1ED760; */
+	color: #000;
+	font-size: 14px;
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #d7d7d7;
+}
+.util-mask-layer-box .submit a:nth-child(2){
+    border-left:0;
+
+}
+
+.util-mask-layer-box .submit a.cancel {
+	/*background-color: #bba066;*/
+}
+.util-mask-share-input {
+	border: 1px solid #d7d7d7;
+	width: 40%;
+	height: 36px;
+	outline: none;
+	margin-left: 5px;
+	padding-left:5px;
+}
+.util-mask-layer-box img {
+    max-width: 100%;
+    width: 35%;
+    /*margin-top: 20px;*/
+    float: right;
+}
+/* toast */
+/*toast*/
+.util-toast{
+	position: fixed;
+	width: 30%;
+	height: 100%;
+	top: 0;
+	left: 35%;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1001;
+}
+.util-toast-content{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 65px;
+	right: 65px;
+	margin: auto;
+	padding: 16px 26px;
+	background-color: rgba(0, 0, 0, .8);
+	border-radius: 4px;
+	color: #fff;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	word-break:break-word;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/* CityDropDown */
+.pro-mask-hide{
+	width:100%;
+	height:100%;
+	position: fixed;
+	top:0;
+	background: rgba(0,0,0,.0);
+	z-index: 2;
+	display: none;
+}
+.pro-box {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index:5;
+	color: #000;
+	height: 4.5rem;
+}
+.pro-box .title {
+	height: .7rem;
+	line-height: .7rem;
+	border-bottom: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+.pro-box .title div {
+	padding: 0 .144rem;
+	font-size: .3rem;
+}
+.pro-box .title .cancel {
+	float: left;
+}
+.confirm {
+	float: right;
+}
+.pro-box .con {
+	background-color: #EDEDED;
+	font-size: .144rem;
+	overflow: hidden;
+	height: 100%;
+}
+.pro-box .con span {
+	background-color: #FFFFFF;
+	float: left;
+	margin: 0.1rem .069rem.027rem;
+	/*margin: 0.1rem .055rem.027rem;*/
+	width: 0.8rem;
+	height: 0.8rem;
+	text-align: center;
+	line-height: 0.8rem;
+	-webkit-border-radius: .016rem;
+	-moz-border-radius: .016rem;
+	border-radius: .016rem;
+	font-size: .3rem;
+
+}
+.pro-box .con span:nth-child(8),.pro-box .con span:nth-child(16),.pro-box .con span:nth-child(24){
+	margin-right: 0;
+}
+.pro-box .con span.active {
+	background-color: #00B8EB;
+	color: #fff;
+}
+.pro-box .con span:nth-child(10){
+	margin-right:0;
+
+}
+.pro-box .con span:nth-child(20){
+	margin-right:0;
+
+}
+.pro-box .con span:nth-child(30){
+	margin-right:0;
+
+}
+[v-cloak] {
+	display: none;
+}
+.item .i-r input[name=car-number] {
+	text-transform: uppercase;
+}
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+.hide {
+	display: none;
+}
+[v-cloak] {
+	display: none;
+}
+/*loding图片*/
+.maskLoding{
+	position: fixed;
+	background: rgba(0,0,0,.3);
+	top:0;
+	width:100%;
+	height:100%;
+	display: none;
+}
+.Lodingbg {
+	background: rgba(255, 255, 255, .7) url(../../img/loding.gif) no-repeat;
+	background-size: cover;
+	width: 3rem;
+	height: 1.9rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 10px;
+}
+.maskLoding_show{
+	display: block;
+}
+
+/*ajax 全屏等待*/
+.util-ajax-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, .7);
+}
+
+.util-ajax-bg .icon {
+	background: url(../../img/loding.gif) no-repeat;
+	background-size: cover;
+	width: 3rem;
+	height: 1.9rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.opacity0 {
+	opacity: 0;
+}
+
+.opacity1 {
+	opacity: 1;
+	-webkit-transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-o-transition: opacity .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
+
+}
+
+.product-form {
+	float:right;
+	width:360px;
+	height: 392px;
+	top:150px;
+	color: #fff;
+	line-height: 39px;
+	padding: 28px 20px  0 ;
+	background: #FFFFFF;
+	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.20);
+	border-radius: 6px;
+
+}
+.product-form .item {
+	display: block;
+	margin-top: 14px;
+	color: #000;
+	height: 34px;
+	line-height:34px;
+}
+.product-form .form-txt {
+	font-size:14px;
+	text-align: center;
+	color: #3A3A3A;
+	background: transparent;/*新增*/
+}
+.product-form .btn {
+	height: 56px;
+	cursor:pointer;
+	width:320px;
+	border-bottom: 6px solid #00AE3E;
+	border-radius: 6px;
+	background: #1ED760;
+	text-align:center;
+	color:#fff;
+	margin:0 auto;
+	line-height:50px;
+	font-size: 20px;
+	letter-spacing: 2.5px;
+	margin-top: 28px;
+}
+
+.product-form div {
+	display: inline-block;
+}
+
+/**/
+.product-form5 .item {
+	display: block;
+	/*background: #fff;*/
+	margin-top: 10px;
+	color: #000;
+	height: 34px;
+	line-height:34px;
+}
+.product-form5 .form-txt {
+	font-size:14px;
+	text-align: center;
+	color: #3A3A3A;
+	background: transparent;/*新增*/
+}
+.product-form5 .btn {
+	height: 50px;
+	cursor:pointer;
+	width:320px;
+	border-bottom: 6px solid #00AE3E;
+	border-radius: 6px;
+
+
+}
+.product-form5 .btn span{
+	display:inline-block;
+	width:320px;
+	height: 50px;
+	text-align:center;
+	color:#fff;
+	margin:0 auto;
+	font-size:16px;
+	background:#1ed760;
+	border-radius:6px;
+	line-height:50px;
+	letter-spacing: 3px;
+
+
+}
+
+.product-form5 div {
+	display: inline-block;
+}
+.item .i-l {
+	width: 80px;
+	height: 32px;
+	font-size: 16px;
+	color: #666666;
+	line-height: 38px;
+	float: left;
+	margin-right: 6px;
+}
+.item {
+	font-size:12px;
+	position:relative;
+}
+.item .i-r {
+	position: relative;
+	width:234px;
+	height: 38px;
+	border-radius: 4px;
+	background: #FFFFFF;
+	box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.20);
+}
+.item .i-r div{
+	font-size: 14px;
+	float: left;
+	height: 100%;
+}
+.item .i-r input {
+	width: 100px;
+	line-height: 38px;
+	outline:none;
+	padding-left:5px;
+	font-size:14px;
+	height:38px;
+	background: transparent;
+
+}
+.item .i-r input[name=car-number] {
+	text-transform:uppercase;
+}
+.item .i-r .insure-city {
+	border: 1px solid red;
+	height: 100%;
+	width: 189px;
+	display: inline-block;
+	position: absolute;
+	opacity: 0;
+	cursor:pointer;
+}
+.item .i-r .insure-city-show {
+	width: 190px;
+	background: url("../../img/arrow_down.png") no-repeat right;
+	padding-left:5px;
+	height: 38px;
+	line-height: 38px;
+	cursor:pointer;
+
+}
+.item .i-r .expire-date-year {
+	border: 1px solid red;
+	height: 100%;
+	width: 80px;
+	display: inline-block;
+	position: absolute;
+	opacity: 0;
+	cursor:pointer;
+}
+.item .i-r .expire-date-year-show {
+	width: 72px;
+	background: url("../../img/arrow_down.png") no-repeat right;
+	padding-left:5px;
+	cursor:pointer;
+	line-height: 38px;
+}
+.item .i-r .expire-date-month {
+	border: 1px solid red;
+	height: 100%;
+	width: 80px;
+	display: inline-block;
+	position: absolute;
+	opacity: 0;
+	cursor:pointer;
+	margin-left: 51px;
+
+}
+.item .i-r .expire-date-month-show {
+	width: 80px;
+	background: url("../../img/arrow_down.png") no-repeat right;
+}
+.item .i-r .pro {
+	border: 1px solid red;
+	height: 100%;
+	width: 47px;
+	display: inline-block;
+	position: absolute;
+	opacity: 0;
+	cursor:pointer;
+	left: 0;
+}
+.item .i-r .pro-show {
+	width: 40px;
+	background: url("../../img/arrow_down.png") no-repeat right;
+	padding-left:5px;
+	line-height: 38px;
+}
+.item .i-r .send-code {
+	width: 85px;
+	text-align: center;
+	color: #1ED760;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 38px;
+	font-size:14px;
+	line-height:38px;
+	cursor:pointer;
+	background-image: linear-gradient(-180deg, #FFFFFF 0%, #F9F9F9 100%);
+	box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.20);
+	border-radius: 4px;
+
+}

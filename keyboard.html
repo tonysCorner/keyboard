@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>键盘插件</title>
+    <link rel="stylesheet" href="css/common/base.css">
+    <link rel="stylesheet" href="css/keyboard.css">
+    <style>
+        #target1,#target2, #target3, #target4 {
+            border: 1px solid red;
+            font-size: .5rem;
+            line-height: .5rem;
+            margin: 1rem;
+        }
+    </style>
+    <script type="text/javascript" src="js/rem.js"></script>
+</head>
+<body class="main">
+<input id="target1" type="text" readonly/>
+<input id="target2" type="text" readonly/>
+<input id="target3" type="text" readonly/>
+<input id="target4" type="text" readonly/>
+
+<div class="item ">
+    <div class="line wz ">
+        <div class="text">车牌号</div>
+        <div class="car" id="proo" ><span id="pro-show">沪</span><div class="data_right"></div></div>
+        <div class="i-r car_wz">
+            <input type="email" v-model="plateNumberTwo" readonly="readonly" class="car_number uppercase" id="car-number" size="6" name="car-number" placeholder="请输入车牌号"/>
+        </div>
+    </div>
+</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/sycKeyboard.js"></script>
+<script>
+    window.onload = function() {
+        var target1 = document.getElementById("target1");
+        var target2 = document.getElementById("target2");
+        var target3 = document.getElementById("target3");
+        var target4 = document.getElementById("target4");
+                //cursor = document.getElementById('cursor');
+        var KB1 = new SycKeyBoard(target1, function(){}, 6);
+        var KB2 = new SycKeyBoard(target2, function(){}, 6);
+        var KB3 = new SycKeyBoard(target3, function(){}, 6);
+        var KB4 = new SycKeyBoard(target4, function(){}, 6);
+
+    }
+</script>
+</body>
+</html>
